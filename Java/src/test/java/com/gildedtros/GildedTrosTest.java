@@ -1,6 +1,8 @@
 package com.gildedtros;
 
 import com.gildedtros.category.GoodWine;
+import com.gildedtros.category.InterestingConference;
+import com.gildedtros.category.NormalItem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -57,6 +59,19 @@ class GildedTrosTest {
 
         assertEquals(0, items[0].quality);
         assertEquals(-13, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdate_NormalItemClass(){
+        Item item = new Item("Elixir of the SOLID", 10, 20);
+
+        NormalItem normalItemCategory = new NormalItem();
+        normalItemCategory.updateQuantity(item);
+        normalItemCategory.updateSellIn(item);
+
+        assertEquals(19, item.quality);
+        assertEquals(9, item.sellIn);
+
     }
 
     @Test
@@ -132,6 +147,19 @@ class GildedTrosTest {
 
         assertEquals(36, items[0].quality);
         assertEquals(22, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdate_BackstagePassClass(){
+        Item item = new Item("Backstage passes for Re:Factor", 23, 35);
+
+        InterestingConference interestingConferenceCategory = new InterestingConference();
+        interestingConferenceCategory.updateQuantity(item);
+        interestingConferenceCategory.updateSellIn(item);
+
+        assertEquals(36, item.quality);
+        assertEquals(22, item.sellIn);
+
     }
 
     @Test
