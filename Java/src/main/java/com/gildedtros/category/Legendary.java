@@ -13,7 +13,7 @@ public class Legendary implements ItemCategory {
     }
 
     @Override
-    public void updateQuantity(Item item) {
+    public void updateQuality(Item item) {
         // Geen actie nodig voor legendarische items
     }
 }

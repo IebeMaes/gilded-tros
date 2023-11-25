@@ -3,6 +3,8 @@ package com.gildedtros.category;
 import com.gildedtros.Item;
 import com.gildedtros.ItemCategory;
 
+import static com.gildedtros.Constants.MAXIMAL_QUALTIY;
+
 public class InterestingConference implements ItemCategory {
     public InterestingConference() {
     }
@@ -13,13 +15,13 @@ public class InterestingConference implements ItemCategory {
     }
 
     @Override
-    public void updateQuantity(Item item) {
-        if (item.quality < 50) {
+    public void updateQuality(Item item) {
+        if (item.quality < MAXIMAL_QUALTIY) {
             item.quality++;
-            if (item.sellIn < 11 && item.quality < 50) {
+            if (item.sellIn < 11 && item.quality < MAXIMAL_QUALTIY) {
                 item.quality++;
             }
-            if (item.sellIn < 6 && item.quality < 50) {
+            if (item.sellIn < 6 && item.quality < MAXIMAL_QUALTIY) {
                 item.quality++;
             }
         }

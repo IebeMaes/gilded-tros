@@ -66,7 +66,7 @@ class GildedTrosTest {
         Item item = new Item("Elixir of the SOLID", 10, 20);
 
         NormalItem normalItemCategory = new NormalItem();
-        normalItemCategory.updateQuantity(item);
+        normalItemCategory.updateQuality(item);
         normalItemCategory.updateSellIn(item);
 
         assertEquals(19, item.quality);
@@ -92,7 +92,7 @@ class GildedTrosTest {
         Item item = new Item("Good Wine", 5, 30);
 
         GoodWine goodWineCategory = new GoodWine();
-        goodWineCategory.updateQuantity(item);
+        goodWineCategory.updateQuality(item);
         goodWineCategory.updateSellIn(item);
 
         assertEquals(31, item.quality);
@@ -154,7 +154,7 @@ class GildedTrosTest {
         Item item = new Item("Backstage passes for Re:Factor", 23, 35);
 
         InterestingConference interestingConferenceCategory = new InterestingConference();
-        interestingConferenceCategory.updateQuantity(item);
+        interestingConferenceCategory.updateQuality(item);
         interestingConferenceCategory.updateSellIn(item);
 
         assertEquals(36, item.quality);

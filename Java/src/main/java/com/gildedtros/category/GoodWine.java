@@ -3,6 +3,8 @@ package com.gildedtros.category;
 import com.gildedtros.Item;
 import com.gildedtros.ItemCategory;
 
+import static com.gildedtros.Constants.MAXIMAL_QUALTIY;
+
 public class GoodWine implements ItemCategory {
     public GoodWine() {
 
@@ -14,11 +16,11 @@ public class GoodWine implements ItemCategory {
     }
 
     @Override
-    public void updateQuantity(Item item) {
-        if (item.quality < 50) {
+    public void updateQuality(Item item) {
+        if (item.quality < MAXIMAL_QUALTIY) {
             item.quality++;
         }
-        if (item.sellIn < 0 && item.quality < 50) {
+        if (item.sellIn < 0 && item.quality < MAXIMAL_QUALTIY) {
             item.quality++;
         }
     }
