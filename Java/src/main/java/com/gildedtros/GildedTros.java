@@ -7,10 +7,6 @@ class GildedTros {
     private final int MINIMAL_QUALITY = 0;
     private final int MAXIMAL_QUALTIY = 50;
 
-    private final String LEGENDARY_ITEM = "B-DAWG Keychain";
-    private final String GOOD_WINE = "Good Wine";
-    private final List<String> INTERESTING_CONFERENCES = List.of("Backstage passes for Re:Factor", "Backstage passes for HAXX");
-
     public GildedTros(Item[] items) {
         this.items = items;
     }
