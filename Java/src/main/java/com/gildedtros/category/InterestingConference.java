@@ -1,11 +1,10 @@
 package com.gildedtros.category;
 
 import com.gildedtros.Item;
-import com.gildedtros.ItemUpdater;
+import com.gildedtros.ItemCategory;
 
-public class InterestingConference extends Item implements ItemUpdater {
-    public InterestingConference(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+public class InterestingConference implements ItemCategory {
+    public InterestingConference() {
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.gildedtros;
 
-public interface ItemUpdater {
+public interface ItemCategory {
     void updateSellIn(Item item);
 
     void updateQuantity(Item item);

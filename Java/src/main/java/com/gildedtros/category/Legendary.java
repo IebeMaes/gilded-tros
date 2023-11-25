@@ -1,20 +1,19 @@
 package com.gildedtros.category;
 
 import com.gildedtros.Item;
-import com.gildedtros.ItemUpdater;
+import com.gildedtros.ItemCategory;
 
-public class Legendary extends Item implements ItemUpdater {
-    public Legendary(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+public class Legendary implements ItemCategory {
+    public Legendary() {
     }
 
     @Override
     public void updateSellIn(Item item) {
-
+        // Geen actie nodig voor legendarische items
     }
 
     @Override
     public void updateQuantity(Item item) {
-
+        // Geen actie nodig voor legendarische items
     }
 }

@@ -1,20 +1,25 @@
 package com.gildedtros.category;
 
 import com.gildedtros.Item;
-import com.gildedtros.ItemUpdater;
+import com.gildedtros.ItemCategory;
 
-public class GoodWine extends Item implements ItemUpdater {
-    public GoodWine(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+public class GoodWine implements ItemCategory {
+    public GoodWine() {
+
     }
 
     @Override
     public void updateSellIn(Item item) {
-
+        item.sellIn--;
     }
 
     @Override
     public void updateQuantity(Item item) {
-
+        if (item.quality < 50) {
+            item.quality++;
+        }
+        if (item.sellIn < 0 && item.quality < 50) {
+            item.quality++;
+        }
     }
 }

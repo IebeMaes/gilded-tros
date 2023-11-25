@@ -1,11 +1,10 @@
 package com.gildedtros.category;
 
 import com.gildedtros.Item;
-import com.gildedtros.ItemUpdater;
+import com.gildedtros.ItemCategory;
 
-public class NormalItem extends Item implements ItemUpdater {
-    public NormalItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+public class NormalItem implements ItemCategory {
+    public NormalItem() {
     }
 
     @Override

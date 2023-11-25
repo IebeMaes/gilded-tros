@@ -1,5 +1,6 @@
 package com.gildedtros;
 
+import com.gildedtros.category.GoodWine;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -69,6 +70,19 @@ class GildedTrosTest {
 
         assertEquals(31, items[0].quality);
         assertEquals(4, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdate_GoodWineClass(){
+        Item item = new Item("Good Wine", 5, 30);
+
+        GoodWine goodWineCategory = new GoodWine();
+        goodWineCategory.updateQuantity(item);
+        goodWineCategory.updateSellIn(item);
+
+        assertEquals(31, item.quality);
+        assertEquals(4, item.sellIn);
+
     }
 
     @Test
