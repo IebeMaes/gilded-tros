@@ -3,6 +3,7 @@ package com.gildedtros;
 import com.gildedtros.category.GoodWine;
 import com.gildedtros.category.InterestingConference;
 import com.gildedtros.category.Normal;
+import com.gildedtros.category.Smelly;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -209,5 +210,71 @@ class GildedTrosTest {
 
         assertEquals(80, items[0].quality);
         assertEquals(15, items[0].sellIn);
+    }
+
+
+    @Test
+    public void testUpdateQuality_SmellyItems() {
+        Item[] items = new Item[] {
+                new Item("Duplicate Code", 10, 20)
+        };
+        GildedTros gildedTros = new GildedTros(items);
+
+        gildedTros.updateQuality();
+
+        assertEquals(18, items[0].quality);
+        assertEquals(9, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdateQuality_SmellyItemsOnSellIn() {
+        Item[] items = new Item[] {
+                new Item("Long Methods", 1, 20)
+        };
+        GildedTros gildedTros = new GildedTros(items);
+
+        gildedTros.updateQuality();
+
+        assertEquals(18, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdateQuality_SmellyItemPastSellIn() {
+        Item[] items = new Item[] {
+                new Item("Ugly Variable Names", 0, 20)
+        };
+        GildedTros gildedTros = new GildedTros(items);
+
+        gildedTros.updateQuality();
+
+        assertEquals(16, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdateQuality_SmellyItemPastSellInWithZeroQuality() {
+        Item[] items = new Item[] {
+                new Item("Duplicate Code", -12, 0)
+        };
+        GildedTros gildedTros = new GildedTros(items);
+
+        gildedTros.updateQuality();
+
+        assertEquals(0, items[0].quality);
+        assertEquals(-13, items[0].sellIn);
+    }
+
+    @Test
+    public void testUpdate_SmellyItemClass(){
+        Item item = new Item("Long Methods", 10, 20);
+
+        Smelly smellyCategory = new Smelly();
+        smellyCategory.updateQuality(item);
+        smellyCategory.updateSellIn(item);
+
+        assertEquals(18, item.quality);
+        assertEquals(9, item.sellIn);
+
     }
 }
