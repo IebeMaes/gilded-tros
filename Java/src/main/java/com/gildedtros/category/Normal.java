@@ -3,11 +3,10 @@ package com.gildedtros.category;
 import com.gildedtros.Item;
 import com.gildedtros.ItemCategory;
 
-import static com.gildedtros.Constants.MAXIMAL_QUALTIY;
 import static com.gildedtros.Constants.MINIMAL_QUALITY;
 
-public class NormalItem implements ItemCategory {
-    public NormalItem() {
+public class Normal implements ItemCategory {
+    public Normal() {
     }
 
     @Override

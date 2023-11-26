@@ -2,7 +2,7 @@ package com.gildedtros;
 
 import com.gildedtros.category.GoodWine;
 import com.gildedtros.category.InterestingConference;
-import com.gildedtros.category.NormalItem;
+import com.gildedtros.category.Normal;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -65,9 +65,9 @@ class GildedTrosTest {
     public void testUpdate_NormalItemClass(){
         Item item = new Item("Elixir of the SOLID", 10, 20);
 
-        NormalItem normalItemCategory = new NormalItem();
-        normalItemCategory.updateQuality(item);
-        normalItemCategory.updateSellIn(item);
+        Normal normalCategory = new Normal();
+        normalCategory.updateQuality(item);
+        normalCategory.updateSellIn(item);
 
         assertEquals(19, item.quality);
         assertEquals(9, item.sellIn);

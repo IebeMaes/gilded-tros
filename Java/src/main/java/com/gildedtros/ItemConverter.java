@@ -3,10 +3,9 @@ package com.gildedtros;
 import com.gildedtros.category.GoodWine;
 import com.gildedtros.category.InterestingConference;
 import com.gildedtros.category.Legendary;
-import com.gildedtros.category.NormalItem;
+import com.gildedtros.category.Normal;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ItemConverter {
 
@@ -18,7 +17,7 @@ public class ItemConverter {
         return switch (item.name) {
             case GOOD_WINE -> new GoodWine();
             case LEGENDARY_ITEM -> new Legendary();
-            default -> isInterestingConference(item.name) ? new InterestingConference() : new NormalItem();
+            default -> isInterestingConference(item.name) ? new InterestingConference() : new Normal();
         };
     }
 
