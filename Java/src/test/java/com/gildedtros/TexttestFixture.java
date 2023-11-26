@@ -31,7 +31,6 @@ public class TexttestFixture {
             System.out.printf("--------------------------------%n");
             for (Item item : items) {
                 System.out.printf("| %-30s | %-8s | %4d |%n", item.name, item.sellIn, item.quality);
-                //System.out.println(item);
             }
             System.out.println();
             app.updateQuality();
